@@ -154,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/et_tgl_lahir"
                     android:layout_margin="3dp"
-                    android:text="Passworda"
+                    android:text="Password"
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 
