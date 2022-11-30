@@ -119,7 +119,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtfullname" />
+                app:layout_constraintTop_toBottomOf="@+id/txtfirstname" />
 
             <TextView
                 android:id="@+id/txtlastnameuser"
