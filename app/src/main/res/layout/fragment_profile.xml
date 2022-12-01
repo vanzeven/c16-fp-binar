@@ -133,11 +133,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtnameuser" />
 
             <TextView
-                android:id="@+id/txtnoid"
+                android:id="@+id/txtnik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="No. ID"
+                android:text="No. NIK"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="5dp"
-                android:text="43xxxx"
+                android:text="32000342312"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtlastnameuser" />
@@ -163,7 +163,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtnoid" />
+                app:layout_constraintTop_toBottomOf="@+id/txtnik" />
 
             <TextView
                 android:id="@+id/txtemailuser"
@@ -203,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="date of birth"
+                android:text="Date of Birth"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -247,9 +247,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnedit"
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_margin="12dp"
             android:padding="5dp"
+            style="@style/ButtonStyle"
             android:text="Edit Profile"
             android:background="@drawable/btn_style"
             app:layout_constraintStart_toStartOf="parent"
@@ -257,41 +258,51 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnpayment"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_margin="12dp"
-            android:padding="5dp"
-            android:gravity="center_vertical"
-            android:text="payment method"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="12dp"
             android:background="@drawable/btn_style"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="payment method"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnedit" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnhelpcenter"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="12dp"
             android:layout_marginStart="12dp"
-            android:padding="5dp"
-            android:gravity="center_vertical"
-            android:text="help center"
             android:background="@drawable/btn_style"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="help center"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnpayment" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnlogout"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="12dp"
-            android:layout_marginStart="12dp"
-            android:padding="5dp"
-            android:gravity="center_vertical"
-            android:text="logout"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/btn_style"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnhelpcenter" />
 
