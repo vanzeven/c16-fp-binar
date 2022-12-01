@@ -10,6 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <include
             android:id="@+id/wall"
             layout="@layout/wall"
@@ -23,10 +24,10 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_marginTop="75dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="75dp"
                 app:cardCornerRadius="75dp">
 
                 <RelativeLayout
@@ -39,7 +40,7 @@
                         android:layout_height="match_parent"
                         android:contentDescription="image"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_baseline_person_24"/>
+                        android:src="@drawable/ic_baseline_person_24" />
 
                     <ImageView
                         android:layout_width="50dp"
@@ -47,7 +48,7 @@
                         android:layout_centerInParent="true"
                         android:alpha="0.4"
                         android:contentDescription="image"
-                        android:src="@drawable/ic_blue_edit_24"/>
+                        android:src="@drawable/ic_blue_edit_24" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -57,40 +58,61 @@
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="10dp">
 
-            <TextView
-                android:id="@+id/nama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="110dp"
-                android:text="Nama"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
+                <TextView
+                    android:id="@+id/firstname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="110dp"
+                    android:text="First Name"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/et_input_nama"
-                style="@style/InputTextStyle"
-                android:layout_below="@id/nama"
-                android:autofillHints="nama"
-                android:hint="Masukkan Nama"
-                android:inputType="text"/>
+                <EditText
+                    android:id="@+id/et_input_firstname"
+                    style="@style/InputTextStyle"
+                    android:layout_below="@id/firstname"
+                    android:autofillHints="nama"
+                    android:hint="First Name"
+                    android:inputType="text" />
 
-            <TextView
-                android:id="@+id/nik"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/et_input_nama"
-                android:layout_margin="3dp"
-                android:text="NIK"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
+                <TextView
+                    android:id="@+id/lastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_input_firstname"
+                    android:layout_margin="3dp"
+                    android:text="Last Name"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_input_lastname"
+                    style="@style/InputTextStyle"
+                    android:layout_below="@id/lastname"
+                    android:autofillHints="nama"
+                    android:hint="Last Name"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/nik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_input_lastname"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="NIK"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/et_nik"
                     style="@style/InputTextStyle"
                     android:layout_below="@id/nik"
                     android:autofillHints="nama"
-                    android:hint="NIK"
-                    android:inputType="text"/>
+                    android:hint="Input NIK"
+                    android:inputType="text" />
 
                 <TextView
                     android:id="@+id/no_telp"
@@ -98,17 +120,17 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/et_nik"
                     android:layout_margin="3dp"
-                    android:text="No. Telepon"
+                    android:text="No. Phone"
                     android:textColor="@color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/et_no_telp"
                     style="@style/InputTextStyle"
                     android:layout_below="@id/no_telp"
                     android:autofillHints="nama"
-                    android:hint="Masukkan No Telepon"
-                    android:inputType="text"/>
+                    android:hint="Input No. Phone"
+                    android:inputType="text" />
 
                 <TextView
                     android:id="@+id/email"
@@ -118,7 +140,7 @@
                     android:layout_margin="3dp"
                     android:text="Email (can't be edited)"
                     android:textColor="@color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/et_email"
@@ -126,7 +148,7 @@
                     android:layout_below="@id/email"
                     android:autofillHints="nama"
                     android:hint="Email"
-                    android:inputType="text"/>
+                    android:inputType="text" />
 
                 <TextView
                     android:id="@+id/tgl_lahir"
@@ -134,19 +156,19 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/et_email"
                     android:layout_margin="3dp"
-                    android:text="Tanggal Lahir"
+                    android:text="Date of Birth"
                     android:textColor="@color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/et_tgl_lahir"
                     style="@style/InputTextStyle"
                     android:layout_below="@id/tgl_lahir"
                     android:autofillHints="date"
-                    android:hint="Masukkan Tanggal Lahir"
+                    android:hint="Date of Birth"
                     android:inputType="none"
                     android:textIsSelectable="true"
-                    tools:ignore="TextField"/>
+                    tools:ignore="TextField" />
 
                 <TextView
                     android:id="@+id/pass"
@@ -156,7 +178,7 @@
                     android:layout_margin="3dp"
                     android:text="Password"
                     android:textColor="@color/black"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/et_pass"
@@ -164,7 +186,7 @@
                     android:layout_below="@id/pass"
                     android:autofillHints="password"
                     android:hint="Password"
-                    android:inputType="text"/>
+                    android:inputType="text" />
 
                 <ImageView
                     android:id="@+id/btn_view_pass"
@@ -175,26 +197,20 @@
                     android:layout_alignBottom="@id/et_pass"
                     android:layout_marginEnd="5dp"
                     android:contentDescription="see password"
-                    android:src="@drawable/ic_outline_remove_green_eye_24"
-                    />
+                    android:src="@drawable/ic_outline_remove_green_eye_24" />
 
                 <Button
                     android:id="@+id/btn_update"
                     style="@style/ButtonStyle"
-                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_style"
                     android:layout_below="@id/et_pass"
-                    android:text="Update User"/>
-
-
+                    android:layout_marginTop="20dp"
+                    android:text="Update User" />
 
             </RelativeLayout>
-
-
 
         </LinearLayout>
 
     </RelativeLayout>
-
-
 
 </ScrollView>
