@@ -1,4 +1,4 @@
-package com.c16.flywithme.presentation.ui
+package com.c16.flywithme.presentation.ui.start
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
