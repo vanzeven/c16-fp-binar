@@ -40,4 +40,11 @@
         <item name="android:textSize">18sp</item>
         <item name="android:color">@color/tosca</item>
     </style>
+
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">
+            @style/ThemeOverlay.MaterialComponents.AutoCompleteTextView.OutlinedBox
+        </item>
+        <item name="endIconMode">dropdown_menu</item>
+    </style>
 </resources>
