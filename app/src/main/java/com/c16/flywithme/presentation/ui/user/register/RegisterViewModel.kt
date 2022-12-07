@@ -13,6 +13,5 @@ class RegisterViewModel(private val userUseCase: UserUseCase) : ViewModel() {
         lname: String,
         nik: String,
         phone: String,
-        address: String
-    ) = userUseCase.registerUser(email, pass, cpass, fname, lname, nik, phone, address)
+    ) = userUseCase.registerUser(email, pass, cpass, fname, lname, nik, phone)
 }

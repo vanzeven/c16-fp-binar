@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
         val lastNameEditText = binding.etLastName
         val passwordEditText = binding.etPassword
         val confirmPasswordEditText = binding.etConpassword
-        val genderEditText = binding.genderField
+        //val genderEditText = binding.genderField
         val phoneEditText = binding.etPhone
         val nikEditText = binding.etNik
 
@@ -48,8 +48,8 @@ class RegisterActivity : AppCompatActivity() {
         val lastName = lastNameEditText.text.toString()
         val password = passwordEditText.text.toString()
         val conPassword = confirmPasswordEditText.text.toString()
-        val gender = genderEditText.editText?.text.toString()
-        val genderValue = if (gender == genderItems[0]) "M" else "F"
+        //val gender = genderEditText.editText?.text.toString()
+        //val genderValue = if (gender == genderItems[0]) "M" else "F"
         val phone = phoneEditText.text.toString()
         val nik = nikEditText.text.toString()
 
@@ -72,7 +72,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 val loadingDialog = loadingDialogBuilder.create()
 
-                viewModel.registerUser(email, password, conPassword, firstName, lastName, nik, phone, genderValue)
+                viewModel.registerUser(email, password, conPassword, firstName, lastName, nik, phone)
                     .observe(this) { result ->
                         when (result) {
                             is Result.Loading -> loadingDialog.show()

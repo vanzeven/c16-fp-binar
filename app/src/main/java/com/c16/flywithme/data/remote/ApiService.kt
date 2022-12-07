@@ -8,7 +8,6 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    //endpoint : BASE_URL + Value POST (https://flywithme-be.up.railway.app/login
     @FormUrlEncoded
     @POST("api/login")
     suspend fun loginUser(
@@ -16,7 +15,6 @@ interface ApiService {
         @Field("password") password: String
     ): Response<LoginResponse>
 
-    //endpoint : BASE_URL + Value POST (https://flywithme-be.up.railway.app/api/register
     @FormUrlEncoded
     @POST("api/register")
     suspend fun registerUser(

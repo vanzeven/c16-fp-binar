@@ -16,8 +16,7 @@ interface UserUseCase {
         fname: String,
         lname: String,
         nik: String,
-        phone: String,
-        address: String
+        phone: String
     ): LiveData<Result<UserRegister>>
 
     fun getDetailUser(

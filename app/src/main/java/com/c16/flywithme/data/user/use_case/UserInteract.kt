@@ -20,10 +20,9 @@ class UserInteract(private val userRepository: IUserRepository) :
         fname: String,
         lname: String,
         nik: String,
-        phone: String,
-        address: String
+        phone: String
     ): LiveData<Result<UserRegister>> =
-        userRepository.registerUser(email, pass, cpass, fname, lname, nik, phone, address)
+        userRepository.registerUser(email, pass, cpass, fname, lname, nik, phone)
 
     override fun getDetailUser(id: String): LiveData<Result<UserDetail>> =
         userRepository.getDetailUser(id)

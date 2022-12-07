@@ -20,9 +20,9 @@ class UserRepository(
 
             if (response.body()?.error == false) {
                 val data = UserLogin(
-                    response.body()?.loginResult?.id!!,
-                    response.body()?.loginResult?.email!!,
-                    response.body()?.loginResult?.password!!,
+                    response.body()?.data?.id!!,
+                    response.body()?.data?.email!!,
+                    response.body()?.data?.password!!,
                 )
                 emit(Result.Success(data))
             } else if (response.body()?.error == true) {
@@ -40,14 +40,12 @@ class UserRepository(
         fname: String,
         lname: String,
         nik: String,
-        phone: String,
-        address: String
+        phone: String
     ): LiveData<Result<UserRegister>> = liveData {
         emit(Result.Loading)
 
         try {
-            val response = apiService.registerUser(email, pass, cpass, fname, lname, nik, phone, address)
-
+            val response = apiService.registerUser(email, pass, cpass, fname, lname, nik, phone, "user")
             if (response.body()?.error == false) {
                 val data = UserRegister(response.body()?.message!!)
                 emit(Result.Success(data))
