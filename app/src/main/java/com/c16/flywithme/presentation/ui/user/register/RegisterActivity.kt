@@ -72,29 +72,29 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 val loadingDialog = loadingDialogBuilder.create()
 
-                viewModel.registerUser(email, password, conPassword, firstName, lastName, nik, phone)
-                    .observe(this) { result ->
-                        when (result) {
-                            is Result.Loading -> loadingDialog.show()
-                            is Result.Success -> {
-                                loadingDialog.dismiss()
-                                Toast.makeText(
-                                    this, "Register Success",
-                                    Toast.LENGTH_SHORT
-                                )
-                                    .show()
-                                toLogin()
-                            }
-                            is Result.Error -> {
-                                loadingDialog.dismiss()
-                                Toast.makeText(
-                                    this, "Register Failed",
-                                    Toast.LENGTH_SHORT
-                                )
-                                    .show()
-                            }
-                        }
-                    }
+//                viewModel.registerUser(email, password, conPassword, firstName, lastName, nik, phone)
+//                    .observe(this) { result ->
+//                        when (result) {
+//                            is Result.Loading -> loadingDialog.show()
+//                            is Result.Success -> {
+//                                loadingDialog.dismiss()
+//                                Toast.makeText(
+//                                    this, "Register Success",
+//                                    Toast.LENGTH_SHORT
+//                                )
+//                                    .show()
+//                                toLogin()
+//                            }
+//                            is Result.Error -> {
+//                                loadingDialog.dismiss()
+//                                Toast.makeText(
+//                                    this, "Register Failed",
+//                                    Toast.LENGTH_SHORT
+//                                )
+//                                    .show()
+//                            }
+//                        }
+//                    }
             }
         }
     }

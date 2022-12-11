@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
     companion object {
-        private const val url = "https://www.flywithme-api.me/"
+        private const val BASE_URL = "http://www.flywithme-api.me/"
 
         fun getApiService(): ApiService {
 
@@ -23,7 +23,7 @@ class ApiConfig {
                 .build()
 
             val retrofit = Retrofit.Builder()
-                .baseUrl(url)
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

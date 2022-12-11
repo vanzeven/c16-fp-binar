@@ -1,10 +1,7 @@
 package com.c16.flywithme.data.user.preference
 
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.*
 import com.c16.flywithme.data.user.model.UserModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -14,7 +11,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
     fun getUser(): Flow<UserModel> {
         return dataStore.data.map { preferences ->
             UserModel(
-                preferences[ID_KEY] ?: "",
+                preferences[ID_KEY] ?: 0,
                 preferences[EMAIL_KEY] ?: "",
                 preferences[PASSWORD_KEY] ?: "",
                 preferences[STATE_KEY] ?: false
@@ -32,7 +29,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
 
     suspend fun logout() {
         dataStore.edit { preferences ->
-            preferences[ID_KEY] = ""
+            preferences[ID_KEY]
             preferences[EMAIL_KEY] = ""
             preferences[STATE_KEY] = false
         }
@@ -42,7 +39,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         @Volatile
         private var INSTANCE: UserPreference? = null
 
-        private val ID_KEY = stringPreferencesKey("id")
+        private val ID_KEY = intPreferencesKey("id")
         private val EMAIL_KEY = stringPreferencesKey("email")
         private val PASSWORD_KEY = stringPreferencesKey("password")
         private val STATE_KEY = booleanPreferencesKey("state")

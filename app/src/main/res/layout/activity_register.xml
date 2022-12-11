@@ -13,7 +13,11 @@
 
         <include
             android:id="@+id/include"
-            layout="@layout/wall_login_register" />
+            layout="@layout/wall_login_register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/logo"
