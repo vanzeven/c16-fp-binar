@@ -1,7 +1,6 @@
 package com.c16.flywithme.data.user.use_case
 
 import androidx.lifecycle.LiveData
-import com.c16.flywithme.data.remote.LoginRequest
 import com.c16.flywithme.data.result.Result
 import com.c16.flywithme.data.user.model.UserDetail
 import com.c16.flywithme.data.user.model.UserLogin

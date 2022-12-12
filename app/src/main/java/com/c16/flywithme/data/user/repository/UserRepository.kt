@@ -3,7 +3,7 @@ package com.c16.flywithme.data.user.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.c16.flywithme.data.remote.ApiService
-import com.c16.flywithme.data.remote.LoginRequest
+import com.c16.flywithme.data.request.LoginRequest
 import com.c16.flywithme.data.result.Result
 import com.c16.flywithme.data.user.model.UserDetail
 import com.c16.flywithme.data.user.model.UserLogin
