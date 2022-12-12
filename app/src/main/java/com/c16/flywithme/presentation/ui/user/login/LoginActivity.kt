@@ -103,7 +103,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                         is Result.Error -> {
                             loadingDialog.dismiss()
-                            errorAlert(result.error)
+                            errorAlert()
                         }
                     }
                 }
@@ -120,10 +120,10 @@ class LoginActivity : AppCompatActivity() {
         ).matches()
     }
 
-    private fun errorAlert(message: String) {
+    private fun errorAlert() {
         AlertDialog.Builder(this).apply {
             setTitle(resources.getString(R.string.failed_login))
-            setMessage(message)
+            setMessage(resources.getString(R.string.not_found))
             create()
             show()
         }

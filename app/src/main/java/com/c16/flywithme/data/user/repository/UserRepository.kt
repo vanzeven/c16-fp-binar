@@ -18,14 +18,16 @@ class UserRepository(
         try {
             val response = apiService.loginUser(LoginRequest(email, pass))
 
-            if (response.body()?.status == false) {
+//            if (response.body()?.status == false) {
+            if (!response.body()?.status.toBoolean()) {
                 val data = UserLogin(
                     response.body()?.`data`?.email!!,
                     response.body()?.`data`?.password!!,
                 )
                 emit(Result.Success(data))
-            } else if (response.body()?.status == true) {
-                emit(Result.Error("Email atau Password anda salah"))
+//            } else if (response.body()?.status == true) {
+            } else if (response.body()?.status.toBoolean()) {
+                emit(Result.Error("Email or Password not Found"))
             }
         } catch (e: Exception) {
             emit(Result.Error(e.message.toString()))
