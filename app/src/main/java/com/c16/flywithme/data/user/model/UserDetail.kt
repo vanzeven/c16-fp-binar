@@ -1,15 +1,34 @@
 package com.c16.flywithme.data.user.model
 
+import com.google.gson.annotations.SerializedName
+
 data class UserDetail (
-    val id: String?=null,
-    val email: String?=null,
-    val password: String? = null,
-    val firstName: String? = null,
-    val lastName: String? = null,
-    val NIK: String? = null,
-    val address: String? = null,
-    val phoneNumber: String? = null,
-    val image: String? = null,
-    val gender: String? = null,
-    val roleId: String? = null,
+    @SerializedName("address")
+    val address: String,
+    @SerializedName("createdAt")
+    val createdAt: String,
+    @SerializedName("dateOfBirth")
+    val dateOfBirth: String,
+    @SerializedName("email")
+    val email: String,
+    @SerializedName("firstName")
+    val firstName: String,
+    @SerializedName("gender")
+    val gender: String,
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("image")
+    val image: Any,
+    @SerializedName("lastName")
+    val lastName: String,
+    @SerializedName("NIK")
+    val nIK: String,
+    @SerializedName("password")
+    val password: String,
+    @SerializedName("phoneNumber")
+    val phoneNumber: String,
+    @SerializedName("roleId")
+    val roleId: String,
+    @SerializedName("updatedAt")
+    val updatedAt: String
 )

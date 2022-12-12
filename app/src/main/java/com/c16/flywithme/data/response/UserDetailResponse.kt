@@ -17,34 +17,46 @@ data class UserDetailResponse(
 
 data class UserItem(
 
-	@field:SerializedName("id")
-	val id: String,
-
-	@field:SerializedName("email")
-    val email: String,
-
-	@field:SerializedName("firstName")
-	val firstName: String,
-
-	@field:SerializedName("lastName")
-	val lastName: String,
-
-	@field:SerializedName("nik")
-	val nik: String,
-
-	@field:SerializedName("phone")
-	val phone: String,
-
-	@field:SerializedName("address")
+	@SerializedName("address")
 	val address: String,
 
-	@field:SerializedName("gender")
+	@SerializedName("createdAt")
+	val createdAt: String,
+
+	@SerializedName("dateOfBirth")
+	val dateOfBirth: String,
+
+	@SerializedName("email")
+	val email: String,
+
+	@SerializedName("firstName")
+	val firstName: String,
+
+	@SerializedName("gender")
 	val gender: String,
 
-	@field:SerializedName("image")
-	val image: String,
+	@SerializedName("id")
+	val id: Int,
 
-	@field:SerializedName("role_id")
-	val roleId: String
+	@SerializedName("image")
+	val image: Any,
+
+	@SerializedName("lastName")
+	val lastName: String,
+
+	@SerializedName("NIK")
+	val NIK: String,
+
+	@SerializedName("password")
+	val password: String,
+
+	@SerializedName("phoneNumber")
+	val phoneNumber: String,
+
+	@SerializedName("roleId")
+	val roleId: String,
+
+	@SerializedName("updatedAt")
+	val updatedAt: String
 
 )

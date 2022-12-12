@@ -3,6 +3,7 @@ package com.c16.flywithme.data.user.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.c16.flywithme.data.remote.ApiService
+import com.c16.flywithme.data.remote.LoginRequest
 import com.c16.flywithme.data.result.Result
 import com.c16.flywithme.data.user.model.UserDetail
 import com.c16.flywithme.data.user.model.UserLogin
@@ -15,12 +16,12 @@ class UserRepository(
         emit(Result.Loading)
 
         try {
-            val response = apiService.loginUser(email, pass)
+            val response = apiService.loginUser(LoginRequest(email, pass))
 
             if (response.body()?.status == false) {
                 val data = UserLogin(
-                    response.body()?.data?.email!!,
-                    response.body()?.data?.password!!,
+                    response.body()?.`data`?.email!!,
+                    response.body()?.`data`?.password!!,
                 )
                 emit(Result.Success(data))
             } else if (response.body()?.status == true) {
@@ -66,15 +67,20 @@ class UserRepository(
             if (response.body()?.error == false) {
                 val data = UserDetail(
 
-                    response.body()?.user?.get(0)?.id!!,
+                    response.body()?.user?.get(0)?.address!!,
+                    response.body()?.user?.get(0)?.createdAt!!,
+                    response.body()?.user?.get(0)?.dateOfBirth!!,
                     response.body()?.user?.get(0)?.email!!,
                     response.body()?.user?.get(0)?.firstName!!,
-                    response.body()?.user?.get(0)?.lastName!!,
-                    response.body()?.user?.get(0)?.nik!!,
-                    response.body()?.user?.get(0)?.phone!!,
-                    response.body()?.user?.get(0)?.address!!,
                     response.body()?.user?.get(0)?.gender!!,
-                    response.body()?.user?.get(0)?.image!!
+                    response.body()?.user?.get(0)?.id!!,
+                    response.body()?.user?.get(0)?.image!!,
+                    response.body()?.user?.get(0)?.lastName!!,
+                    response.body()?.user?.get(0)?.NIK!!,
+                    response.body()?.user?.get(0)?.password!!,
+                    response.body()?.user?.get(0)?.phoneNumber!!,
+                    response.body()?.user?.get(0)?.roleId!!,
+                    response.body()?.user?.get(0)?.updatedAt!!
                 )
                 emit(Result.Success(data))
             } else {

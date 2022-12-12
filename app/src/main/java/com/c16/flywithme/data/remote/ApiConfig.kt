@@ -6,8 +6,7 @@ import retrofit2.Retrofit
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiConfig {
-    companion object {
+object ApiConfig {
         private const val BASE_URL = "http://www.flywithme-api.me/"
 
         fun getApiService(): ApiService {
@@ -30,5 +29,4 @@ class ApiConfig {
 
             return retrofit.create(ApiService::class.java)
         }
-    }
 }

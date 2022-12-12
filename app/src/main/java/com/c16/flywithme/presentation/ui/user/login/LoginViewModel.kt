@@ -16,15 +16,15 @@ class LoginViewModel(
 
     fun loginUser(email: String, pass: String) = userUseCase.loginUser(email, pass)
 
-    fun saveUser(userLogin: UserLogin) {
-        viewModelScope.launch {
-            val data = UserModel(
-                userLogin.id,
-                userLogin.email,
-                userLogin.password,
-                true
-            )
-            userPreference.saveUser(data)
-        }
-    }
+//    fun saveUser(userLogin: UserLogin) {
+//        viewModelScope.launch {
+//            val data = UserModel(
+//                userLogin.id,
+//                userLogin.email,
+//                userLogin.password,
+//                true
+//            )
+//            userPreference.saveUser(data)
+//        }
+//    }
 }
