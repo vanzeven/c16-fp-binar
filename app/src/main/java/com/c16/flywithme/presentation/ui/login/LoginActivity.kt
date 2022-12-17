@@ -31,6 +31,8 @@ class LoginActivity : AppCompatActivity() {
 
         setViewModel()
 
+        supportActionBar?.hide()
+
         binding.btnLogin.setOnClickListener{
             loginAction()
         }
@@ -81,7 +83,7 @@ class LoginActivity : AppCompatActivity() {
             email.isEmpty() -> emailEditText.error = resources.getString(R.string.empty_email)
             !checkEmailError(email) -> emailEditText.error = resources.getString(R.string.not_email)
             password.isEmpty() -> passwordEditText.error = resources.getString(R.string.empty_pass)
-            password.length < 6 -> passwordEditText.error =
+            password.length < 8 -> passwordEditText.error =
                 resources.getString(R.string.pass_less_than_six)
             else -> {
                 //loading dialog
@@ -97,7 +99,7 @@ class LoginActivity : AppCompatActivity() {
                         is Result.Loading -> loadingDialog.show()
                         is Result.Success -> {
                             loadingDialog.dismiss()
-                            //viewModel.saveUser(result.data)
+                            viewModel.saveUser(result.data)
                             toMain()
                         }
                         is Result.Error -> {

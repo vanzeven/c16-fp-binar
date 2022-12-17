@@ -23,7 +23,7 @@
     <string name="empty_email">Email Empty</string>
     <string name="not_email">Not Email</string>
     <string name="empty_pass">Empty Password</string>
-    <string name="pass_less_than_six">Password less than 6 digits</string>
+    <string name="pass_less_than_six">Password less than 8 digits</string>
     <string name="failed_login">Login Failed</string>
     <string name="loading">Loading</string>
     <string name="not_found">Email or Password Not Found</string>

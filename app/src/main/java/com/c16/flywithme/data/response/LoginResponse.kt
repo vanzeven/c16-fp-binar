@@ -27,7 +27,7 @@ data class DataUser(
     @SerializedName("gender")
     val gender: String,
     @SerializedName("id")
-    val id: Int,
+    val id: String,
     @SerializedName("image")
     val image: Any,
     @SerializedName("lastName")
