@@ -9,6 +9,7 @@ import com.c16.flywithme.data.user.use_case.UserUseCase
 import com.c16.flywithme.data.user.preference.UserPreference
 import com.c16.flywithme.di.Injection
 import com.c16.flywithme.presentation.ui.login.LoginViewModel
+import com.c16.flywithme.presentation.ui.user.profile.ProfileViewModel
 
 class ViewModelFactory(
     private val userUseCase: UserUseCase,
@@ -27,9 +28,9 @@ class ViewModelFactory(
 //            modelClass.isAssignableFrom(RegisterViewModel::class.java) -> RegisterViewModel(
 //                userUseCase
 //            ) as T
-//            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> ProfileViewModel(
-//                userUseCase, pref
-//            ) as T
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> ProfileViewModel(
+                userUseCase, pref
+            ) as T
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }
