@@ -5,6 +5,15 @@ import com.c16.flywithme.data.user.use_case.UserUseCase
 
 class RegisterViewModel(private val userUseCase: UserUseCase) : ViewModel() {
 
+    fun registerUser(
+        email: String,
+        firstName: String,
+        lastName: String,
+        nIK: Long,
+        password: String,
+        phoneNumber: String,
+    ) = userUseCase.registerUser(email, firstName, lastName, nIK, password, phoneNumber)
+
 //    fun registerUser(
 //        email: String,
 //        pass: String,

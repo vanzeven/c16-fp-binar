@@ -4,9 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.c16.flywithme.data.remote.ApiService
 import com.c16.flywithme.data.request.LoginRequest
+import com.c16.flywithme.data.request.RegisterRequest
 import com.c16.flywithme.data.result.Result
 import com.c16.flywithme.data.user.model.UserDetail
 import com.c16.flywithme.data.user.model.UserLogin
+import com.c16.flywithme.data.user.model.UserRegister
 
 class UserRepository(
     private val apiService: ApiService
@@ -33,6 +35,37 @@ class UserRepository(
             emit(Result.Error(e.message.toString()))
         }
     }
+
+    override fun registerUser(
+        email: String,
+        firstName: String,
+        lastName: String,
+        nIK: Long,
+        password: String,
+        phoneNumber: String
+    ): LiveData<Result<UserRegister>> = liveData {
+        emit(Result.Loading)
+
+        try {
+            val response = apiService.registerUser(RegisterRequest(email, firstName, lastName, nIK, password, phoneNumber))
+
+            if (response.body()?.status.toBoolean()){
+                val data = UserRegister(
+                    response.body()?.`data`?.email!!,
+                    response.body()?.`data`?.firstName!!,
+                    response.body()?.`data`?.lastName!!,
+                    response.body()?.`data`?.nIK!!,
+                    response.body()?.`data`?.password!!,
+                    response.body()?.`data`?.phoneNumber!!,)
+                emit(Result.Success(data))
+            } else {
+                emit(Result.Error("Email has been registered"))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
 
 //    override fun registerUser(
 //        email: String,

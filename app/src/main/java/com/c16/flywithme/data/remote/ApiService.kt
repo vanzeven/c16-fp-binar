@@ -1,7 +1,9 @@
 package com.c16.flywithme.data.remote
 
 import com.c16.flywithme.data.request.LoginRequest
+import com.c16.flywithme.data.request.RegisterRequest
 import com.c16.flywithme.data.response.LoginResponse
+import com.c16.flywithme.data.response.RegisterResponse
 import com.c16.flywithme.data.response.UserDetailResponse
 import retrofit2.*
 import retrofit2.http.*
@@ -29,6 +31,11 @@ interface ApiService {
 //        @Field("phoneNumber") phone: String,
 //        @Field("address") address: String,
 //    ): Response<RegisterResponse>
+
+    @POST("api/register")
+    suspend fun registerUser(
+        @Body registerRequest: RegisterRequest,
+    ) : Response<RegisterResponse>
 
     @GET("user/{id}")
     suspend fun detailUser(
