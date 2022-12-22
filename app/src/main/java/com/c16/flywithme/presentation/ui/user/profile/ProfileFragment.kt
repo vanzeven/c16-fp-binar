@@ -38,7 +38,7 @@ class ProfileFragment : Fragment() {
 
         setViewModel()
 
-        _binding.logoutBtn.setOnClickListener {
+        _binding.btnLogout.setOnClickListener {
             toLogin()
         }
     }

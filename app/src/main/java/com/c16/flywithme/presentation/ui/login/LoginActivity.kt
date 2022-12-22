@@ -55,8 +55,8 @@ class LoginActivity : AppCompatActivity() {
 //        val email = emailEditText.text.toString()
 //        val password = passwordEditText.text.toString()
 
-        val email = "fmukhollis1009@gmail.com"
-        val password = "fajar123"
+        val email = "7farema@gmail.com"
+        val password = "asdfghjk"
 
 //        val req = LoginRequest(email, password)
 //        req.email = email.trim()
