@@ -5,58 +5,59 @@ import java.sql.Struct
 
 data class UserDetailResponse(
 
-	@field:SerializedName("error")
+	@SerializedName("error")
 	val error: Boolean,
 
-	@field:SerializedName("message")
+	@SerializedName("message")
 	val message: String,
 
-	@field:SerializedName("user")
-	val user: List<UserItem>
-)
+	@SerializedName("user")
+	val user: ArrayList<UserItem>
+) {
 
-data class UserItem(
+	data class UserItem(
 
-	@SerializedName("address")
-	val address: String,
+		@SerializedName("address")
+		val address: String,
 
-	@SerializedName("createdAt")
-	val createdAt: String,
+		@SerializedName("createdAt")
+		val createdAt: String,
 
-	@SerializedName("dateOfBirth")
-	val dateOfBirth: String,
+		@SerializedName("dateOfBirth")
+		val dateOfBirth: String,
 
-	@SerializedName("email")
-	val email: String,
+		@SerializedName("email")
+		val email: String,
 
-	@SerializedName("firstName")
-	val firstName: String,
+		@SerializedName("firstName")
+		val firstName: String,
 
-	@SerializedName("gender")
-	val gender: String,
+		@SerializedName("gender")
+		val gender: String,
 
-	@SerializedName("id")
-	val id: Int,
+		@SerializedName("id")
+		val id: Int,
 
-	@SerializedName("image")
-	val image: Any,
+		@SerializedName("image")
+		val image: Any,
 
-	@SerializedName("lastName")
-	val lastName: String,
+		@SerializedName("lastName")
+		val lastName: String,
 
-	@SerializedName("NIK")
-	val NIK: String,
+		@SerializedName("NIK")
+		val NIK: String,
 
-	@SerializedName("password")
-	val password: String,
+		@SerializedName("password")
+		val password: String,
 
-	@SerializedName("phoneNumber")
-	val phoneNumber: String,
+		@SerializedName("phoneNumber")
+		val phoneNumber: String,
 
-	@SerializedName("roleId")
-	val roleId: String,
+		@SerializedName("roleId")
+		val roleId: String,
 
-	@SerializedName("updatedAt")
-	val updatedAt: String
+		@SerializedName("updatedAt")
+		val updatedAt: String
 
-)
+	)
+}

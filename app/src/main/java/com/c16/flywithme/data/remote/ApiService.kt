@@ -17,8 +17,8 @@ interface ApiService {
     ): Response<LoginResponse>
 
 
-    @GET("user/{id}")
-    suspend fun detailUser(
+    @GET("api/users/findById/{id}")
+    fun detailUser(
         @Field("id") id: String
-    ): Response<UserDetailResponse>
+    ): Call<UserDetailResponse>
 }
