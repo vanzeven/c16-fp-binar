@@ -10,7 +10,7 @@ interface UserUseCase {
     fun loginUser(email: String, pass: String): LiveData<Result<LoginResponse>>
 
 
-    fun getDetailUser(
-        id: String
-    ): LiveData<Result<UserDetail>>
+//    fun getDetailUser(
+//        id: String
+//    ): LiveData<Result<UserDetail>>
 }

@@ -60,7 +60,7 @@ class ProfileFragment : Fragment() {
                 call: Call<UserDetailResponse>,
                 response: Response<UserDetailResponse>
             ) {
-                TODO("Not yet implemented")
+                val body = response.body()
             }
 
             override fun onFailure(call: Call<UserDetailResponse>, t: Throwable) {
