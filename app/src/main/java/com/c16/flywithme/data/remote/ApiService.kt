@@ -30,8 +30,8 @@ interface ApiService {
 //        @Field("address") address: String,
 //    ): Response<RegisterResponse>
 
-    @GET("user/{id}")
-    suspend fun detailUser(
+    @GET("api/users/findById/{id}")
+    fun detailUser(
         @Field("id") id: String
-    ): Response<UserDetailResponse>
+    ): Call<UserDetailResponse>
 }
