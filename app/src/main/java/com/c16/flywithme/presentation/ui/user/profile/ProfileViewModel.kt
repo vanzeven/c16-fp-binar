@@ -14,9 +14,9 @@ class ProfileViewModel(
     private val userPreference: UserPreference
 ) : ViewModel() {
 
-    fun getDetailUser(
-        id: String
-    ) = userUseCase.getDetailUser(id)
+//    fun getDetailUser(
+//        id: String
+//    ) = userUseCase.getDetailUser(id)
 
     fun getUserData(): LiveData<UserModel> = userPreference.getUser().asLiveData()
 

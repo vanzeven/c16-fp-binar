@@ -9,7 +9,7 @@ interface IUserRepository {
     fun loginUser(email: String, pass: String): LiveData<Result<UserLogin>>
 
 
-    fun getDetailUser(
-        id: String
-    ): LiveData<Result<UserDetail>>
+//    fun getDetailUser(
+//        id: String
+//    ): LiveData<Result<UserDetail>>
 }

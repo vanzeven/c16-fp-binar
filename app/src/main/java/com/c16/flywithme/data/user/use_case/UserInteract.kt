@@ -12,8 +12,8 @@ class UserInteract(private val userRepository: IUserRepository) :
     override fun loginUser(email: String, pass: String): LiveData<Result<UserLogin>> =
         userRepository.loginUser(email, pass)
 
-    override fun getDetailUser(id: String): LiveData<Result<UserDetail>> =
-        userRepository.getDetailUser(id)
+//    override fun getDetailUser(id: String): LiveData<Result<UserDetail>> =
+//        userRepository.getDetailUser(id)
 
 
 }

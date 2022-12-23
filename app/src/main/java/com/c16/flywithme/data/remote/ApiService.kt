@@ -32,6 +32,6 @@ interface ApiService {
 
     @GET("api/users/findById/{id}")
     fun detailUser(
-        @Field("id") id: String
+        @Path("id") id: String
     ): Call<UserDetailResponse>
 }
