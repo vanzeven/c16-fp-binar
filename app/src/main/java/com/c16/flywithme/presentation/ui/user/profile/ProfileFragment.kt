@@ -54,6 +54,7 @@ class ProfileFragment : Fragment() {
         val id = "4"
         val retroInstance = ApiConfig.getApiService()
         val call = retroInstance.detailUser(id)
+        _binding.tvFirstname.text = "Sua Yoo"
 
         call.enqueue(object : Callback<UserDetailResponse> {
             override fun onResponse(
