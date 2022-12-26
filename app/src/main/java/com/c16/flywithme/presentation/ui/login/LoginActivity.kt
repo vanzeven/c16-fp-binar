@@ -49,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun loginAction() {
+        toMain()
         val emailEditText = binding.etEmail
         val passwordEditText = binding.etPassword
 
