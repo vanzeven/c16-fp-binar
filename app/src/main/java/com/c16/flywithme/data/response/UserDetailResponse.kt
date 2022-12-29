@@ -5,14 +5,14 @@ import java.sql.Struct
 
 data class UserDetailResponse(
 
-	@SerializedName("error")
-	val error: Boolean,
+	@SerializedName("status")
+	val status: String,
 
-	@SerializedName("message")
-	val message: String,
+	@SerializedName("meesage")
+	val meesage: String,
 
-	@SerializedName("user")
-	val user: ArrayList<UserItem>
+	@SerializedName("data")
+	val data: ArrayList<UserItem>
 ) {
 
 	data class UserItem(
