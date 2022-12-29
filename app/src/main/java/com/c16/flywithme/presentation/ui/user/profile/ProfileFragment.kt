@@ -51,22 +51,23 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getDetail() {
-        val id = "4"
-        val retroInstance = ApiConfig.getApiService()
-        val call = retroInstance.detailUser(id)
-        _binding.tvFirstname.text = "Sua Yoo"
+        val id = "1"
 
-        call.enqueue(object : Callback<UserDetailResponse> {
+        ApiConfig.getApiService().detailUser(id).enqueue(object : Callback<UserDetailResponse> {
             override fun onResponse(
                 call: Call<UserDetailResponse>,
                 response: Response<UserDetailResponse>
             ) {
+                Toast.makeText(requireContext(),"success", Toast.LENGTH_SHORT).show()
                 val body = response.body()
+                _binding.tvFirstname.text = body?.meesage.toString()
             }
 
             override fun onFailure(call: Call<UserDetailResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                Toast.makeText(requireContext(),"failed", Toast.LENGTH_SHORT).show()
             }
+
+
         })
     }
 
