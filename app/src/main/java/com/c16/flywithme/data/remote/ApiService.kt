@@ -36,6 +36,6 @@ interface ApiService {
         @Field("id") id: String
     ): Response<UserDetailResponse>
 
-    @GET("airports/findAll")
+    @GET("api/airports/findAll")
     fun getAllAirports(): Call<AirportResponse>
 }
