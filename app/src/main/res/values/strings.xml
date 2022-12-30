@@ -34,8 +34,11 @@
     <string name="from_to">From</string>
     <string name="select_airport">Select Airport</string>
     <string name="to">To</string>
-    <string name="departure_date">Departure Date</string>
+    <string name="departure_date">Departure Date (YYYY-MM-DD)</string>
     <string name="enter_the_departure_date">Enter the departure date</string>
+    <string name="flight_type">Flight Type</string>
+    <string name="round_trip">Round Trip</string>
+    <string name="one_way">One Way</string>
     <string name="passenger">Passenger</string>
     <string name="search">Search</string>
 
