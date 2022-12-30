@@ -9,10 +9,10 @@ class RegisterViewModel(private val userUseCase: UserUseCase) : ViewModel() {
         email: String,
         firstName: String,
         lastName: String,
-        nIK: Long,
+        nik: Long,
         password: String,
         phoneNumber: String,
-    ) = userUseCase.registerUser(email, firstName, lastName, nIK, password, phoneNumber)
+    ) = userUseCase.registerUser(email, firstName, lastName, nik, password, phoneNumber)
 
 //    fun registerUser(
 //        email: String,

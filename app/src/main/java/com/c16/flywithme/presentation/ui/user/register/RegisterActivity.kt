@@ -50,26 +50,35 @@ class RegisterActivity : AppCompatActivity() {
 //        val phoneEditText = binding.etPhone
 //        val nikEditText = binding.etNik
 
-        val email = emailEditText.text.toString()
-        val firstName = firstNameEditText.text.toString()
-        val lastName = lastNameEditText.text.toString()
-        val password = passwordEditText.text.toString()
+        var email = emailEditText.text.toString()
+        var firstName = firstNameEditText.text.toString()
+        var lastName = lastNameEditText.text.toString()
+        var password = passwordEditText.text.toString()
 //        val conPassword = confirmPasswordEditText.text.toString()
         //val gender = genderEditText.editText?.text.toString()
         //val genderValue = if (gender == genderItems[0]) "M" else "F"
-        val phone = phoneNumberEditText.text.toString()
-        val nik = nIKEditText.text.toString()
+        var phone = phoneNumberEditText.text.toString()
+        var nik = nIKEditText.text.toString()
+
+        email = "7farema@gmail.com"
+        firstName = "Sua"
+        lastName = "Yoo"
+        password = "asdfghjk"
+        phone = "0853567889"
+        nik = "3328080203000011"
 
         when {
-            email.isEmpty() -> emailEditText.error = "Email is required"
-            !checkEmailError(email) -> emailEditText.error = "Email is not valid"
-            firstName.isEmpty() -> firstNameEditText.error = "First Name is required"
-            lastName.isEmpty() -> lastNameEditText.error = "Last Name is required"
-            nik.isEmpty() -> nIKEditText.error = "NIK is required"
-            password.isEmpty() -> passwordEditText.error = "Password is required"
-            password.length < 6 -> passwordEditText.error = "Password must be at least 6 characters"
-            phone.isEmpty() -> phoneNumberEditText.error = "Phone Number is required"
-            phone.length < 11 -> phoneNumberEditText.error = "Phone Number must be at least 11 characters"
+            //uncomment when done
+//            email.isEmpty() -> emailEditText.error = "Email is required"
+//            !checkEmailError(email) -> emailEditText.error = "Email is not valid"
+//            firstName.isEmpty() -> firstNameEditText.error = "First Name is required"
+//            lastName.isEmpty() -> lastNameEditText.error = "Last Name is required"
+//            nik.isEmpty() -> nIKEditText.error = "NIK is required"
+//            password.isEmpty() -> passwordEditText.error = "Password is required"
+//            password.length < 6 -> passwordEditText.error = "Password must be at least 6 characters"
+//            phone.isEmpty() -> phoneNumberEditText.error = "Phone Number is required"
+//            phone.length < 11 -> phoneNumberEditText.error = "Phone Number must be at least 11 characters"
+
 //            conPassword.isEmpty() -> confirmPasswordEditText.error = "Confirm Password is required"
 //            conPassword.length < 6 -> confirmPasswordEditText.error = "Confirm Password must be at least 6 characters"
 //            password != conPassword -> confirmPasswordEditText.error = "Password and Confirm Password must be same"
@@ -82,7 +91,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 val loadingDialog = loadingDialogBuilder.create()
 
-                viewModel.registerUser(email, firstName, lastName, 0, password, phone)
+                viewModel.registerUser(email, firstName, lastName, nik.toLong(), password, phone)
                     .observe(this) { result ->
                         when (result) {
                             is Result.Loading -> loadingDialog.show()
