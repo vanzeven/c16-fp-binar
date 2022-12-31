@@ -89,23 +89,6 @@ class ProfileFragment : Fragment() {
         }
     }
 
-//    private fun getUserDetail() {
-//        viewModel.getDetailUser(id).observe(viewLifecycleOwner) { result ->
-//            when (result) {
-//                is Result.Loading -> showLoading(true)
-//                is Result.Success -> {
-//                    userDetail = result.data
-//                    isiData()
-//                    showLoading(false)
-//                }
-//                is Result.Error -> {
-//                    Toast.makeText(requireContext(), result.error, Toast.LENGTH_SHORT).show()
-//                    showLoading(false)
-//                }
-//            }
-//        }
-//    }
-
     private fun toLogin() {
         viewModel.signOut()
         val intent = Intent(context, LoginActivity::class.java)
