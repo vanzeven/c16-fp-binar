@@ -1,5 +1,6 @@
 package com.c16.flywithme.data.remote
 
+import com.c16.flywithme.data.request.BookingRequest
 import com.c16.flywithme.data.request.LoginRequest
 import com.c16.flywithme.data.response.*
 import retrofit2.*
@@ -40,17 +41,9 @@ interface ApiService {
     @GET("api/flights/findAll")
     fun getAllFlights(): Call<FlightResponse>
 
-    @FormUrlEncoded
     @POST("api/bookings/add")
     fun addBooking(
-        @Field("name") name: String,
-        @Field("age") age: Int,
-        @Field("NIK") nik: Long,
-        @Field("phoneNumber") phoneNumber: String,
-        @Field("seatNumber") seatNumber: String?,
-        @Field("price") price: Int,
-        @Field("flightId") flightId: Int,
-        @Field("userId") userId: Int
+        @Body bookingRequest: List<BookingRequest>
     ): Call<AddBookingResponse>
 
 }

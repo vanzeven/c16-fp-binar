@@ -3,26 +3,20 @@ package com.c16.flywithme.presentation.ui.user.booking
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.datastore.core.DataStore
-import androidx.datastore.dataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.recyclerview.widget.RecyclerView
-import com.c16.flywithme.R
 import com.c16.flywithme.data.remote.ApiConfig
+import com.c16.flywithme.data.request.BookingRequest
 import com.c16.flywithme.data.response.AddBookingResponse
 import com.c16.flywithme.data.response.FlightsItem
-import com.c16.flywithme.data.user.preference.UserPreference
 import com.c16.flywithme.databinding.FlightItemBinding
-import com.c16.flywithme.di.Injection
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class FlightAdapter(private val context: Context, private val listFlight: ArrayList<FlightsItem>) : RecyclerView.Adapter<FlightAdapter.FlightViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlightViewHolder {
@@ -37,7 +31,11 @@ class FlightAdapter(private val context: Context, private val listFlight: ArrayL
         holder.binding.tvDepartureTime.text = listFlight[position].depatureTime
         holder.binding.tvArrivalTime.text = listFlight[position].arrivalTime
         holder.binding.btnCheck.setOnClickListener {
-            val client = ApiConfig.getApiService().addBooking("Fathan", 20, 3328080205000004, "087823456784", "b5", listFlight[position].classPrice, listFlight[position].id, 8)
+            val client = ApiConfig.getApiService().addBooking(
+                listOf(
+                BookingRequest(
+                "Fathan", 20, 3328080205000004, "087823456784",
+                    "b5", listFlight[position].classPrice, listFlight[position].id, 8)))
             client.enqueue(object : Callback<AddBookingResponse> {
                 override fun onResponse(
                     call: Call<AddBookingResponse>,
