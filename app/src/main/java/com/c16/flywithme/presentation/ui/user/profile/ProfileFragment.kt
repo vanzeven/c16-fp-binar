@@ -59,6 +59,8 @@ class ProfileFragment : Fragment() {
             ) {
                 val body = response.body()
                 _binding.tvFirstname.text = body?.data?.firstName
+                _binding.tvTopFirstname.text = body?.data?.firstName
+                _binding.tvTopLastname.text = body?.data?.lastName
                 _binding.tvLastname.text = body?.data?.lastName
                 _binding.tvNik.text = body?.data?.nIK
                 _binding.tvEmail.text = body?.data?.email
