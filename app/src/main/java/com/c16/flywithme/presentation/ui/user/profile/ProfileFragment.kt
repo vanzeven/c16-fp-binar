@@ -50,14 +50,13 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getDetail() {
-        val id = "1"
+        val id = "3"
 
         ApiConfig.getApiService().detailUser(id).enqueue(object : Callback<UserDetailResponse> {
             override fun onResponse(
                 call: Call<UserDetailResponse>,
                 response: Response<UserDetailResponse>
             ) {
-                Toast.makeText(requireContext(),"success", Toast.LENGTH_SHORT).show()
                 val body = response.body()
                 _binding.tvFirstname.text = body?.data?.firstName
                 _binding.tvLastname.text = body?.data?.lastName
@@ -65,10 +64,12 @@ class ProfileFragment : Fragment() {
                 _binding.tvEmail.text = body?.data?.email
                 _binding.tvDateofbirth.text = body?.data?.dateOfBirth
                 _binding.tvAddress.text = body?.data?.address
+                _binding.progressCircular.visibility = View.INVISIBLE
             }
 
             override fun onFailure(call: Call<UserDetailResponse>, t: Throwable) {
                 Toast.makeText(requireContext(),"failed", Toast.LENGTH_SHORT).show()
+                _binding.progressCircular.visibility = View.INVISIBLE
             }
 
 
