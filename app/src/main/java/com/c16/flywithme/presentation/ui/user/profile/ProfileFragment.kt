@@ -20,6 +20,7 @@ import com.c16.flywithme.viewmodel.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.bumptech.glide.Glide
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -27,6 +28,7 @@ class ProfileFragment : Fragment() {
 
     private lateinit var _binding: FragmentProfileBinding
     private lateinit var viewModel: ProfileViewModel
+    private val binding get() = _binding!!
     private var id = ""
 
     override fun onCreateView(
@@ -67,6 +69,9 @@ class ProfileFragment : Fragment() {
                 _binding.tvDateofbirth.text = body?.data?.dateOfBirth
                 _binding.tvAddress.text = body?.data?.address
                 _binding.tvPhone.text = body?.data?.phoneNumber
+                val image = body?.data?.image
+                Glide.with(requireContext()).load(image).into(binding.ivProfile)
+
                 _binding.progressCircular.visibility = View.INVISIBLE
             }
 
