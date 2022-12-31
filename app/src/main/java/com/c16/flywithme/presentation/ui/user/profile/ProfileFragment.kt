@@ -59,7 +59,12 @@ class ProfileFragment : Fragment() {
             ) {
                 Toast.makeText(requireContext(),"success", Toast.LENGTH_SHORT).show()
                 val body = response.body()
-                _binding.tvFirstname.text = body?.meesage.toString()
+                _binding.tvFirstname.text = body?.data?.firstName
+                _binding.tvLastname.text = body?.data?.lastName
+                _binding.tvNik.text = body?.data?.nIK
+                _binding.tvEmail.text = body?.data?.email
+                _binding.tvDateofbirth.text = body?.data?.dateOfBirth
+                _binding.tvAddress.text = body?.data?.address
             }
 
             override fun onFailure(call: Call<UserDetailResponse>, t: Throwable) {
