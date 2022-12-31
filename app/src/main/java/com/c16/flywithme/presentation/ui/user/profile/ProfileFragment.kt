@@ -64,6 +64,7 @@ class ProfileFragment : Fragment() {
                 _binding.tvEmail.text = body?.data?.email
                 _binding.tvDateofbirth.text = body?.data?.dateOfBirth
                 _binding.tvAddress.text = body?.data?.address
+                _binding.tvPhone.text = body?.data?.phoneNumber
                 _binding.progressCircular.visibility = View.INVISIBLE
             }
 
