@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.c16.flywithme.data.user.use_case.UserUseCase
 import com.c16.flywithme.data.user.preference.UserPreference
 import com.c16.flywithme.di.Injection
+import com.c16.flywithme.presentation.ui.start.SplashViewModel
 import com.c16.flywithme.presentation.ui.user.login.LoginViewModel
 import com.c16.flywithme.presentation.ui.user.register.RegisterViewModel
 
@@ -19,9 +20,9 @@ class ViewModelFactory(
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
-//            modelClass.isAssignableFrom(SplashViewModel::class.java) -> SplashViewModel(
-//                pref
-//            ) as T
+            modelClass.isAssignableFrom(SplashViewModel::class.java) -> SplashViewModel(
+                pref
+            ) as T
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> LoginViewModel(
                 userUseCase, pref
             ) as T

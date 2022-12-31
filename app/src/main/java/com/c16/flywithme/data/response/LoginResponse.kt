@@ -3,16 +3,12 @@ package com.c16.flywithme.data.response
 import com.google.gson.annotations.SerializedName
 
 data class LoginResponse(
-
     @SerializedName("data")
     val `data`: DataUser,
-
     @SerializedName("message")
     val message: String,
-
     @SerializedName("status")
     val status: String,
-
     @SerializedName("token")
     val token: String
 )

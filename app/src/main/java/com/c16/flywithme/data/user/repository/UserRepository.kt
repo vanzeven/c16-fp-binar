@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.c16.flywithme.data.remote.ApiService
 import com.c16.flywithme.data.request.LoginRequest
+import com.c16.flywithme.data.response.LoginResponse
 import com.c16.flywithme.data.result.Result
 import com.c16.flywithme.data.user.model.UserDetail
 import com.c16.flywithme.data.user.model.UserLogin
@@ -12,7 +13,7 @@ class UserRepository(
     private val apiService: ApiService
 ) : IUserRepository {
 
-    override fun loginUser(email: String, pass: String): LiveData<Result<UserLogin>> = liveData {
+    override fun loginUser(email: String, pass: String): LiveData<Result<LoginResponse>> = liveData {
         emit(Result.Loading)
 
         try {
@@ -20,11 +21,7 @@ class UserRepository(
 
 //            if (response.body()?.status == false) {
             if (!response.body()?.status.toBoolean()) {
-                val data = UserLogin(
-                    response.body()?.`data`?.email!!,
-                    response.body()?.`data`?.password!!,
-                )
-                emit(Result.Success(data))
+                emit(Result.Success(response.body()!!))
 //            } else if (response.body()?.status == true) {
             } else if (response.body()?.status.toBoolean()) {
                 emit(Result.Error("Email or Password not Found"))

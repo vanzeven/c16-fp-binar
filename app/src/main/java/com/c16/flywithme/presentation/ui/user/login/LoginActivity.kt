@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setViewModel()
+        supportActionBar?.hide()
 
         binding.btnLogin.setOnClickListener{
             loginAction()
@@ -98,7 +99,10 @@ class LoginActivity : AppCompatActivity() {
                         is Result.Loading -> loadingDialog.show()
                         is Result.Success -> {
                             loadingDialog.dismiss()
-                            //viewModel.saveUser(result.data)
+                            viewModel.saveUser(result.data)
+                            viewModel.getToken().observe(this) { token ->
+                                println("ini token :$token")
+                            }
                             toMain()
                         }
                         is Result.Error -> {
@@ -139,5 +143,7 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
+
+
 
 }

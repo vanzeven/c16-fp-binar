@@ -1,8 +1,8 @@
 package com.c16.flywithme.data.user.model
 
 data class UserModel(
-    val localid: Int,
+    val userId: Int,
     val email: String,
-    val password: String,
-    val isLogin: Boolean
+    val isLogin: Boolean,
+    val token: String
 )

@@ -16,19 +16,6 @@ interface ApiService {
 //        @Field("password") password: String
     ): Response<LoginResponse>
 
-//    @FormUrlEncoded
-//    @POST("api/register")
-//    suspend fun registerUser(
-//        @Field("email") email: String,
-//        @Field("password") password: String,
-//        @Field("password_confirmation") password_confirmation: String,
-//        @Field("firstName") firstname: String,
-//        @Field("lastName") lastname: String,
-////        @Field("gender") gender: String,
-//        @Field("NIK") nik: String,
-//        @Field("phoneNumber") phone: String,
-//        @Field("address") address: String,
-//    ): Response<RegisterResponse>
 
     @GET("user/{id}")
     suspend fun detailUser(
