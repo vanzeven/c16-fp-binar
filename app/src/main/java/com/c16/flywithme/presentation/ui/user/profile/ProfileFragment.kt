@@ -17,7 +17,6 @@ import com.c16.flywithme.data.response.UserDetailResponse
 import com.c16.flywithme.databinding.FragmentProfileBinding
 import com.c16.flywithme.presentation.ui.login.LoginActivity
 import com.c16.flywithme.viewmodel.ViewModelFactory
-import com.c16.flywithme.data.result.Result
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
