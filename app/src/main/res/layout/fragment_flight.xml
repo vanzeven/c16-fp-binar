@@ -6,6 +6,7 @@
     tools:context=".presentation.ui.user.booking.FlightFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_flight"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/flight_item"/>

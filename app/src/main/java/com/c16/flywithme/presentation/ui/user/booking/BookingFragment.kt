@@ -16,16 +16,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BookingFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BookingFragment : Fragment() {
 
     private var _binding: FragmentBookingBinding? = null
@@ -63,13 +53,27 @@ class BookingFragment : Fragment() {
             val to = binding.spTo.selectedItem.toString()
             val departureDate = binding.etDepart.text.toString()
             val flighType = if(binding.rbRoundTrip.isSelected) binding.rbRoundTrip.text else binding.rbOneWay.text
-            val passenger = binding.etAdult.text.toString().toInt()
 
+            val mFlightFragment = FlightFragment()
+
+            val mBundle = Bundle()
+            mBundle.putString(FlightFragment.EXTRA_FROM, from)
+            mBundle.putString(FlightFragment.EXTRA_TO, to)
+            mBundle.putString(FlightFragment.EXTRA_DEPARTURE_DATE, departureDate)
+
+            mFlightFragment.arguments = mBundle
+
+            val mFragmentManager = parentFragmentManager
+            mFragmentManager?.beginTransaction()?.apply {
+                replace(R.id.frame_layout, mFlightFragment, FlightFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
         }
 
     }
 
-    fun findAllAirport() {
+    private fun findAllAirport() {
         val client = ApiConfig.getApiService().getAllAirports()
         client.enqueue(object : Callback<AirportResponse> {
             override fun onResponse(
