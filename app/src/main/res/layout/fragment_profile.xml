@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
-                android:text="Fajar"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="5dp"
-                android:text="Mukhollis"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_firstname" />
@@ -137,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="No. NIK"
+                android:text="NIK"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="5dp"
-                android:text="32000342312"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_lastname" />
@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="5dp"
-                android:text="fmukhollis@gmail.com"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_nik" />
@@ -181,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="No. Phone"
+                android:text="Phone Number"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="5dp"
-                android:text="089734332"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_email" />
@@ -215,7 +215,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="5dp"
-                android:text="10-09-2000"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_phone" />
@@ -237,7 +237,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="5dp"
-                android:text="Jakarta, Indonesia"
+                android:text=""
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_dateofbirth" />
