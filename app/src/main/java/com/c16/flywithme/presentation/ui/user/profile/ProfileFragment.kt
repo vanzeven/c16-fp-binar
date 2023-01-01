@@ -15,12 +15,12 @@ import androidx.lifecycle.ViewModelProvider
 import com.c16.flywithme.data.remote.ApiConfig
 import com.c16.flywithme.data.response.UserDetailResponse
 import com.c16.flywithme.databinding.FragmentProfileBinding
-import com.c16.flywithme.presentation.ui.login.LoginActivity
 import com.c16.flywithme.viewmodel.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.bumptech.glide.Glide
+import com.c16.flywithme.presentation.ui.user.login.LoginActivity
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 

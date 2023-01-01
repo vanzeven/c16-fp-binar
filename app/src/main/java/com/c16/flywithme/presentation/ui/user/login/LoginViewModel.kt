@@ -23,8 +23,8 @@ class LoginViewModel(
             val data = UserModel(
                 userLogin.data.id,
                 userLogin.data.email,
-                true,
-                userLogin.token
+                userLogin.token,
+                true
             )
             userPreference.saveUser(data)
         }
