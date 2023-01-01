@@ -10,6 +10,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.c16.flywithme.MainActivity
 import com.c16.flywithme.R
 import com.c16.flywithme.viewmodel.ViewModelFactory
 import com.c16.flywithme.data.result.Result
@@ -134,7 +135,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun toMain() {
-        val intent = Intent(this, HomeActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }

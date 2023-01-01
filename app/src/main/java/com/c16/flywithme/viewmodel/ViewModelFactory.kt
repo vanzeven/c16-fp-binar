@@ -10,6 +10,7 @@ import com.c16.flywithme.data.user.preference.UserPreference
 import com.c16.flywithme.di.Injection
 import com.c16.flywithme.presentation.ui.start.SplashViewModel
 import com.c16.flywithme.presentation.ui.user.login.LoginViewModel
+import com.c16.flywithme.presentation.ui.user.profile.ProfileViewModel
 import com.c16.flywithme.presentation.ui.user.register.RegisterViewModel
 
 class ViewModelFactory(
@@ -29,9 +30,9 @@ class ViewModelFactory(
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> RegisterViewModel(
                 userUseCase
             ) as T
-//            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> ProfileViewModel(
-//                userUseCase, pref
-//            ) as T
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> ProfileViewModel(
+                userUseCase, pref
+            ) as T
 //            modelClass.isAssignableFrom(BusinessTrendViewModel::class.java) -> BusinessTrendViewModel(
 //                trendUseCase
 //            ) as T
