@@ -50,8 +50,8 @@ class HistoryFragment : Fragment(), AdapterHistories.OnItemClickListener {
         historiesViewModel.getHistoriesObserver().observe(this@HistoryFragment.viewLifecycleOwner) {
             if (it != null) {
                 showLoading(false)
-                adapterHistories.historiesList = it.orderList.toMutableList()
-                adapterHistories.notifyDataSetChanged()
+//                adapterHistories.historiesList = it.orderList.toMutableList()
+//                adapterHistories.notifyDataSetChanged()
 
             } else {
                 showLoading(false)
