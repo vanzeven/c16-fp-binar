@@ -52,7 +52,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getDetail() {
-        val id = "3"
+        val id = "5"
 
         ApiConfig.getApiService().detailUser(id).enqueue(object : Callback<UserDetailResponse> {
             override fun onResponse(
