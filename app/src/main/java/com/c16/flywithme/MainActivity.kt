@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getUserData().observe(this) {
             id = it.localid
         }
-        Toast.makeText(this, "di MainActivity, id = $id", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "di MainActivity, id = $id", Toast.LENGTH_SHORT).show()
     }
 
 }

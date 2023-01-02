@@ -53,7 +53,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getDetail() {
-        Toast.makeText(requireContext(), "di getdetail, id = $id", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(requireContext(), "di getdetail, id = $id", Toast.LENGTH_SHORT).show()
 
         ApiConfig.getApiService().detailUser(id).enqueue(object : Callback<UserDetailResponse> {
             override fun onResponse(
@@ -74,7 +74,7 @@ class ProfileFragment : Fragment() {
                 Glide.with(requireContext()).load(image).into(binding.ivProfile)
 
                 _binding.progressCircular.visibility = View.INVISIBLE
-                Toast.makeText(requireContext(), "onResponse, id = $id", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "onResponse, id = $id", Toast.LENGTH_SHORT).show()
             }
 
             override fun onFailure(call: Call<UserDetailResponse>, t: Throwable) {
@@ -92,7 +92,7 @@ class ProfileFragment : Fragment() {
         profileViewModel.getUserData().observe(viewLifecycleOwner) {
             id = it.localid
         }
-        Toast.makeText(requireContext(), "di setviewmodel, id = $id", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(requireContext(), "di setviewmodel, id = $id", Toast.LENGTH_SHORT).show()
     }
 
     private fun toLogin() {
