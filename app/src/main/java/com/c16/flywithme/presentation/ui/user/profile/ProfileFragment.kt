@@ -15,21 +15,22 @@ import androidx.lifecycle.ViewModelProvider
 import com.c16.flywithme.data.remote.ApiConfig
 import com.c16.flywithme.data.response.UserDetailResponse
 import com.c16.flywithme.databinding.FragmentProfileBinding
-import com.c16.flywithme.viewmodel.ViewModelFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.bumptech.glide.Glide
+import com.c16.flywithme.viewmodel.ViewModelFactory
 import com.c16.flywithme.presentation.ui.user.login.LoginActivity
+import java.util.concurrent.TimeUnit
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class ProfileFragment : Fragment() {
 
     private lateinit var _binding: FragmentProfileBinding
-    private lateinit var viewModel: ProfileViewModel
+    private lateinit var profileViewModel: ProfileViewModel
     private val binding get() = _binding!!
-    private var id = ""
+    private var id = "5"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +53,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getDetail() {
-        val id = "5"
+        Toast.makeText(requireContext(), "di getdetail, id = $id", Toast.LENGTH_SHORT).show()
 
         ApiConfig.getApiService().detailUser(id).enqueue(object : Callback<UserDetailResponse> {
             override fun onResponse(
@@ -73,6 +74,7 @@ class ProfileFragment : Fragment() {
                 Glide.with(requireContext()).load(image).into(binding.ivProfile)
 
                 _binding.progressCircular.visibility = View.INVISIBLE
+                Toast.makeText(requireContext(), "onResponse, id = $id", Toast.LENGTH_SHORT).show()
             }
 
             override fun onFailure(call: Call<UserDetailResponse>, t: Throwable) {
@@ -86,16 +88,15 @@ class ProfileFragment : Fragment() {
 
     private fun setViewModel() {
         val factory = ViewModelFactory.getInstance(requireContext(), requireContext().dataStore)
-        viewModel = ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
-
-        viewModel.getUserData().observe(viewLifecycleOwner) {
+        profileViewModel = ViewModelProvider(viewModelStore, factory)[ProfileViewModel::class.java]
+        profileViewModel.getUserData().observe(viewLifecycleOwner) {
             id = it.localid
-           // if(it.isLogin) getUserDetail()
         }
+        Toast.makeText(requireContext(), "di setviewmodel, id = $id", Toast.LENGTH_SHORT).show()
     }
 
     private fun toLogin() {
-        viewModel.signOut()
+        profileViewModel.signOut()
         val intent = Intent(context, LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
