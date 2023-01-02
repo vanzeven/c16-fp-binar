@@ -5,6 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.c16.flywithme.MainViewModel
 import com.c16.flywithme.data.user.use_case.UserUseCase
 import com.c16.flywithme.data.user.preference.UserPreference
 import com.c16.flywithme.di.Injection
@@ -25,6 +26,9 @@ class ViewModelFactory(
                 pref
             ) as T
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> LoginViewModel(
+                userUseCase, pref
+            ) as T
+            modelClass.isAssignableFrom(MainViewModel::class.java) -> MainViewModel(
                 userUseCase, pref
             ) as T
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> RegisterViewModel(
